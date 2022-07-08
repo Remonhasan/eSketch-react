@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React, { Fragment } from 'react'
 
 export default class FooterDesktop extends Component {
   render() {
     return (
-      <div>FooterDesktop</div>
+      <Fragment>
+
+      </Fragment>
     )
   }
 }

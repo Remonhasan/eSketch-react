@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React, { Fragment } from 'react'
 
 export default class NewArrival extends Component {
   render() {
     return (
-      <div>NewArrival</div>
+      <Fragment>
+       
+      </Fragment>
     )
   }
 }

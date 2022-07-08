@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React, { Fragment } from 'react'
 
 export default class NavMenuMobile extends Component {
   render() {
     return (
-      <div>NavMenuMobile</div>
+      <Fragment>
+       
+      </Fragment>
     )
   }
 }

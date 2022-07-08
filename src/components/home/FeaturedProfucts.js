@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React, { Fragment } from 'react'
 
 export default class FeaturedProfucts extends Component {
   render() {
     return (
-      <div>FeaturedProfucts</div>
+      <Fragment>
+       
+      </Fragment>
     )
   }
 }

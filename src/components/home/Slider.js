@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React, { Fragment } from 'react'
 
 export default class Slider extends Component {
   render() {
     return (
-      <div>Slider</div>
+      <Fragment>
+       
+      </Fragment>
     )
   }
 }
