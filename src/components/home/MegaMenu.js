@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React, { Fragment } from 'react'
 
 export default class MegaMenu extends Component {
   render() {
     return (
-      <div>MegaMenu</div>
+      <Fragment>
+       
+      </Fragment>
     )
   }
 }

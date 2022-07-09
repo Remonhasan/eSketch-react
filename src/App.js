@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Button } from 'react-bootstrap'
+import { HashRouter, BrowserRouter } from 'react-router-dom'
+import AppRoute from './route/AppRoute'
 
 export default function () {
   return (
-    <div>
-       <Button variant="primary">Primary</Button>
-       <Button variant="primary"><i className='fa fa-home'></i></Button>
-    </div>
+    <Fragment>
+      {/* For not having server side dependency we have used HashRouter */}
+      <HashRouter>
+        <AppRoute />
+      </HashRouter>
+    </Fragment>
   )
 }
 
