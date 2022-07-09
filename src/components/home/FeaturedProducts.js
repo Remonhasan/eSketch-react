@@ -6,7 +6,7 @@ export default class FeaturedProducts extends Component {
     return (
       <Fragment>
         <Container className="text-center" fluid={true}>
-          <h5 className="section-title">FEATURED PRODUCTS</h5>
+          <h5 className="section-title mt-3">FEATURED PRODUCTS</h5>
           <p className="section-sub-title pb-3">Some of our exclusive collection, you may like</p>
           <Row>
             <Col className="p-1" key={1} xl={2} lg={2} md={2} sm={4} xs={6}>
