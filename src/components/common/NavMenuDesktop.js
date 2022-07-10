@@ -23,7 +23,6 @@ export default class NavMenuDesktop extends Component {
               <a className='btn'><i className='fa h4 fa-heart'></i><sup><span className='badge bg-danger'>4</span></sup></a>
               <a className='btn'><i className='fa h4 fa-bell'></i><sup><span className='badge bg-danger'>4</span></sup></a>
               <a className='btn'><i className='fa h4 fa-mobile-alt'></i><sup><span className='badge bg-danger'></span></sup></a>
-              <a className='h4 btn'>LOGIN</a>
               <Link to="/onboard" className='h4 btn'>LOGIN</Link>
               </Col>
             </Row>
