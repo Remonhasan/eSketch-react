@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from 'react'
 import { Row, Col, Card, Container, Navbar, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 export default class FooterDesktop extends Component {
   render() {
@@ -31,7 +32,7 @@ export default class FooterDesktop extends Component {
               <Col className="p-2" lg={3} md={3} sm={6} xs={12}>
                 <h5 className="footer-menu-title">THE COMPANY</h5>
                 <a href="" className="footer-link">About Us</a><br />
-                <a href="" className="footer-link">Contact Us</a><br />
+                <Link to="/contact" className="footer-link">Contact Us</Link><br />
                 <h5 className="footer-menu-title mt-3">OFFICE ADDRESS</h5>
                 <p>Stata Address</p>
               </Col>
