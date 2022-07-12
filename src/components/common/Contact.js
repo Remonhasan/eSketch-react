@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from 'react'
 import { Breadcrumb, Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 import validation from '../../validation/validation';
 import axios from 'axios';
 import ApiURL from '../../api/ApiURL';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default class Contact extends Component {
 
@@ -49,15 +51,15 @@ export default class Contact extends Component {
 
         // Validation
         if (name.length == 0) {
-            alert("Name field is required");
+            toast.error("Name field is required");
         } else if (mobile.length == 0) {
-            alert("Mobile field is required");
+            toast.error("Mobile field is required");
         } else if (!(validation.NameRegx).test(name)) {
-            alert("Invalid Name");
+            toast.error("Invalid Name");
         } else if (!(validation.MobileRegx).test(mobile)) {
-            alert("Invalid Mobile Number");
+            toast.error("Invalid Mobile Number");
         } else if (message.length == 0) {
-            alert("Message field is required");
+            toast.error("Message field is required");
         } else {
 
             sendBtn.innerHTML = "Sending...";
@@ -70,16 +72,16 @@ export default class Contact extends Component {
             // post by api
             axios.post(ApiURL.SendContactDetails, MyFormData).then(function (response) {
                 if (response.status === 200 && response.data === 1) {
-                    alert("Request Success")
+                    toast.success("Request Success")
                     sendBtn.innerHTML = "Send";
                     // Reset the form after submit
                     contactForm.reset();
                 } else {
-                    alert("Request fail! Try again")
+                    toast.error("Request fail! Try again")
                     sendBtn.innerHTML = "Send";
                 }
             }).catch(function (error) {
-                alert(error)
+                toast.error(error)
                 sendBtn.innerHTML = "Send";
             })
         }
@@ -115,6 +117,7 @@ export default class Contact extends Component {
                             </Row>
                         </Col>
                     </Row>
+                    <ToastContainer />
                 </Container>
             </Fragment>
         )
