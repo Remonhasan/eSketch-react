@@ -42,34 +42,45 @@ export default class Contact extends Component {
         let name = this.state.name;
         let mobile = this.state.mobile;
         let message = this.state.message;
+        // Get Button ID
+        let sendBtn = document.getElementById('sendBtn');
+        // Get Form ID
+        let contactForm = document.getElementById('contactForm');
 
         // Validation
-        if(name.length == 0){
+        if (name.length == 0) {
             alert("Name field is required");
-        }else if(mobile.length == 0){
+        } else if (mobile.length == 0) {
             alert("Mobile field is required");
-        }else if (!(validation.NameRegx).test(name)) {
+        } else if (!(validation.NameRegx).test(name)) {
             alert("Invalid Name");
         } else if (!(validation.MobileRegx).test(mobile)) {
             alert("Invalid Mobile Number");
-        }else if(message.length == 0){
+        } else if (message.length == 0) {
             alert("Message field is required");
-        }else{
+        } else {
+
+            sendBtn.innerHTML = "Sending...";
             // Get data by object for submit
-            let MyFormData=new FormData();
-            MyFormData.append("name",name)
-            MyFormData.append("mobile",mobile)
-            MyFormData.append("message",message)
+            let MyFormData = new FormData();
+            MyFormData.append("name", name)
+            MyFormData.append("mobile", mobile)
+            MyFormData.append("message", message)
 
             // post by api
-            axios.post(ApiURL.SendContactDetails,MyFormData).then(function (response) {
-                if(response.status===200 && response.data===1){
-                    alert("OK")
-                }else{
-                    alert("error")
+            axios.post(ApiURL.SendContactDetails, MyFormData).then(function (response) {
+                if (response.status === 200 && response.data === 1) {
+                    alert("Request Success")
+                    sendBtn.innerHTML = "Send";
+                    // Reset the form after submit
+                    contactForm.reset();
+                } else {
+                    alert("Request fail! Try again")
+                    sendBtn.innerHTML = "Send";
                 }
             }).catch(function (error) {
                 alert(error)
+                sendBtn.innerHTML = "Send";
             })
         }
         // Stop the page reload after form submit
